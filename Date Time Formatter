@@ -1,0 +1,88 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CWH extends Thread{
+            public static void main(String[] args) {
+
+                        LocalDateTime dt = LocalDateTime.now();
+                        System.out.println("The current date is : " + dt);
+
+                        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy"); // This is the format
+
+                        String myDate = dt.format(df); // Creating date string using date and format
+                        System.out.println("Date after formattin : "+ myDate);
+
+                    }
+}
+Output :
+The current date is : 2021-05-26T18:15:42.554864400
+Date after formattin : 26.05.2021
+
+
+
+
+Programs to illustrate some of the predefined formatters of the DateTimeFormatter class :
+
+
+#ISO_LOCAL_DATE :
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CWH extends Thread{
+            public static void main(String[] args) {
+
+                        LocalDateTime dt = LocalDateTime.now();
+
+                        DateTimeFormatter df = DateTimeFormatter.ISO_LOCAL_DATE;// Formatting the date in the ISO format
+
+                        String myDate = dt.format(df); // Creating date string using date and format
+                        System.out.println("Date in ISO format : "+ myDate);
+
+                    }
+}
+
+
+Output :
+Date in ISO format : 2021-05-26
+
+
+#ISO_WEEK_DATE :
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CWH extends Thread{
+            public static void main(String[] args) {
+
+                        LocalDateTime dt = LocalDateTime.now();
+
+                        DateTimeFormatter df = DateTimeFormatter.ISO_ORDINAL_DATE;//
+
+                        String myDate = dt.format(df);
+                        System.out.println("Date in ISO_WEEK_DATE Format  : "+ myDate);
+
+                    }
+}
+Output :
+Date in ISO_WEEK_DATE Format  : 2021-W21-3
+
+
+
+
+#ISO_ORDINAL_DATE :
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CWH extends Thread{
+            public static void main(String[] args) {
+
+                        LocalDateTime dt = LocalDateTime.now();
+
+                        DateTimeFormatter df = DateTimeFormatter.ISO_ORDINAL_DATE;//
+
+                        String myDate = dt.format(df);
+                        System.out.println("Date in ISO_WEEK_DATE Format  : "+ myDate);
+
+                    }
+}
+Output :
+Date in ISO_ORDINAL_DATE Format  : 2021-146
