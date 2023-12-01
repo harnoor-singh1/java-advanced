@@ -1,0 +1,64 @@
+
+#Constructors of the date class :
+import java.util.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Date d= new Date();
+        System.out.println("The current date is : " + d);
+
+        Date d1= new Date(1621709639111l);
+        System.out.println("The date calculated form miliseconds is : " + d1);
+
+    }
+}
+Output :
+The current date is : Sun May 23 00:24:17 IST 2021
+The date calculated form miliseconds is : Sun May 23 00:23:59 IST 2021
+
+#Methods of date class :
+
+
+-compareTo() : 
+import java.util.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Date d= new Date();
+
+        Date d1= new Date(2021,12, 24);  //both dates are different
+        System.out.println(d1.compareTo(d));
+        
+    }
+}
+Output:1
+
+-getTime() : 
+import java.util.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Date d= new Date(2021,5,23);
+
+        System.out.println("The number of milliseonds passed since Jan 1, 1970 :" +d.getTime() );
+
+    }
+}
+Output :
+The number of milliseonds passed since Jan 1, 1970 :61582530600000
+
+-getYear() : Prints the current year.
+-getDate() : Prints the current date.
+import java.util.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Date d= new Date();
+        System.out.println("The current date is : "+ d.getDate());
+        System.out.println("The current year is : "+ d.getYear()); //19
+
+    }
+}
+Output :
+The current date is : 23
+The current year is : 121 
+
+
+
+
