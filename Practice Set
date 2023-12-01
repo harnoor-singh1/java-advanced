@@ -1,0 +1,86 @@
+#Question 1: Create an ArrayList and store the names of ten students inside it. Print it using a for each loop.
+import java.util.ArrayList;
+public class CWH{
+            public static void main(String[] args) {
+                ArrayList ar = new ArrayList();
+                ar.add("Student 1");
+                ar.add("Student 2");
+                ar.add("Student 3");
+                ar.add("Student 4");
+                ar.add("Student 5");
+                ar.add("Student 6");
+                ar.add("Student 7");
+                ar.add("Student 8");
+                ar.add("Student 9");
+                ar.add("Student 10");
+                for(Object o: ar){
+                    System.out.println(o);
+                }
+}
+}
+Output :
+Student 1
+Student 2
+Student 3
+Student 4
+Student 5
+Student 6
+Student 7
+Student 8
+Student 9
+Student 10
+
+
+
+Question 2: Create a Set in java. Try to store the duplicate values elements inside this set and verify that only one instance is stored.
+import java.util.HashSet;
+
+public class CWH{
+            public static void main(String[] args) {
+                HashSet<Integer> s = new HashSet();
+                s.add(5);
+                s.add(6);
+                s.add(46);
+                s.add(60);
+                s.add(9);
+                s.add(6);
+                System.out.println(s);
+}
+}
+
+
+Output :
+[5, 6, 9, 60, 46]
+
+Question 3: Use the Calendar class in Java to print the time in the following format : 21:47:02.
+import java.util.Calendar;
+import java.util.Date;
+
+public class CWH{
+            public static void main(String[] args) {
+                Calendar c = Calendar.getInstance();
+                System.out.println(c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND));
+}
+}
+
+
+Output :
+19:15:26
+
+Question 4: Use the Java.time API in Java to print the time in the following format : 21:47:02.
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CWH{
+            public static void main(String[] args) {
+                LocalDateTime dt = LocalDateTime.now(); // This is the date
+                DateTimeFormatter df = DateTimeFormatter.ofPattern("H:m:s"); // This is the format
+                String myDate = dt.format(df); // Creating date string using date and format
+                System.out.println(myDate);
+}
+}
+
+
+Output :
+19:27:59
+
