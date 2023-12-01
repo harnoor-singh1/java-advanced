@@ -1,0 +1,41 @@
+#By extending a class :
+ abstract class Vehicle{
+    abstract void drive();
+}
+
+class AnonDemoByClass{
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle() {
+            @Override
+            void drive() {
+                System.out.println("I'm driving a car.");
+            }
+        };
+        car.drive();
+        }
+}
+Output :
+I'm driving a car.
+
+
+
+
+#By implementing an interface :
+@FunctionalInterface
+interface Human{
+    void walk();
+}
+
+class AnonDemo{
+    public static void main(String[] args) {
+        Human John = new Human() {
+            @Override
+            public void walk() {
+                System.out.println("John walks.");
+            }
+        };
+        John.walk();
+    }
+}
+Output :
+John walks.
