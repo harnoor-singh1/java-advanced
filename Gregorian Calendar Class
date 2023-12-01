@@ -1,0 +1,49 @@
+#isLeapYear(int year) :
+import java.util.*;
+
+public class CWH extends Thread{
+
+    public static void main(String[] args) {
+
+        GregorianCalendar cal = new GregorianCalendar();
+        System.out.println(cal.isLeapYear(2000));
+        System.out.println(cal.isLeapYear(2021));
+
+    }
+}
+Output :
+true
+false
+
+#roll(int field, boolean up) :
+import java.util.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        GregorianCalendar c = new GregorianCalendar();
+        System.out.println("Date before rolling : " + c.getTime());
+
+        c.roll(Calendar.MONTH, true);
+        c.roll(Calendar.DATE, false);
+        c.roll(Calendar.YEAR, true);
+
+        System.out.println("Date after rolling : " + c.getTime());
+    }
+}
+Output :
+Date before rolling : Wed May 26 07:53:24 IST 2021
+Date after rolling : Sat Jun 25 07:53:24 IST 2022
+
+
+#hashcode():
+import java.util.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        GregorianCalendar c = new GregorianCalendar();
+        System.out.println("Calendar : " + c.getTime());
+
+        System.out.println("The hashcode for this calendar is : "+ c.hashCode());
+    }
+}
+Output :
+Calendar : Wed May 26 08:08:33 IST 2021
+The hashcode for this calendar is : 1358707903
