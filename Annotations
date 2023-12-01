@@ -1,0 +1,105 @@
+@Override:
+class KeyPadPhone{
+    void sendMessage(){
+        System.out.println("Text message sent!");
+    }
+}
+
+class AndroidPhone extends KeyPadPhone{
+    @Override
+    void sendMessage(){
+        System.out.println("Message sent via WhatsApp!");
+    }
+}
+
+public class CWH{
+        public static void main(String args[]){
+            AndroidPhone Samsung = new AndroidPhone();
+            Samsung.sendMessage();
+}
+}
+Output :
+Message sent via WhatsApp!
+
+
+
+
+
+@Deprecated :
+class KeyPadPhone{
+    @Deprecated
+    void sendMessage(){
+        System.out.println("Text message sent!");
+    }
+}
+
+class AndroidPhone extends KeyPadPhone{
+    @Override
+    void sendMessage(){
+        System.out.println("Message sent via WhatsApp!");
+    }
+}
+
+public class CWH{
+        public static void main(String args[]){
+            AndroidPhone Samsung = new AndroidPhone();
+            Samsung.sendMessage();
+}
+}
+    }
+}
+
+public class CWH{
+        public static void main(String args[]){
+            AndroidPhone Samsung = new AndroidPhone();
+            Samsung.sendMessage();
+}
+Build Output :
+java: sendMessage() in KeyPadPhone has been deprecated
+
+
+
+
+@SupressWarnings :
+class KeyPadPhone{
+    @Deprecated
+    void sendMessage(){
+        System.out.println("Text message sent!");
+    }
+}
+
+class AndroidPhone extends KeyPadPhone{
+    @Override
+    void sendMessage(){
+        System.out.println("Message sent via WhatsApp!");
+    }
+}
+
+public class CWH{
+        public static void main(String args[]){
+            @SuppressWarnings("deprecation")
+            AndroidPhone Samsung = new AndroidPhone();
+            Samsung.sendMessage();
+}
+}
+Build Output :
+This time no warning is generated because we've suppressed the deprecation warning.
+
+
+
+@FunctionInterface :
+@FunctionalInterface
+interface myFunctionalInterface {
+    void method1();
+    void methodd2();
+}
+public class CWH{
+        public static void main(String args[]){
+            System.out.println("Functonal interface annotation");
+
+}
+}
+Output :
+java: Unexpected @FunctionalInterface annotation
+  myFunctionalInterface is not a functional interface
+    multiple non-overriding abstract methods found in interface myFunctionalInterface
