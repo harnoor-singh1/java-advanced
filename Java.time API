@@ -1,0 +1,85 @@
+#Clock class: 
+import java.time.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Clock cl = Clock.systemDefaultZone();
+        System.out.println(cl.getZone());
+    }
+}
+Output :
+Asia/Calcutta
+
+abstract Instant instant() : 
+import java.time.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Clock cl = Clock.systemUTC();
+
+        System.out.println(cl.instant());
+    }
+}
+Output :
+2021-05-26T06:43:05.064640700Z
+
+
+
+
+
+
+#Duration class :
+import java.time.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Duration d1 = Duration.between(LocalTime.MIN,LocalTime.NOON);  //LocalTime.MIN = '00:00' , LocalTime.NOON = '12:00' 
+                  System.out.println(d1.isNegative());                                         
+                                                                                                  
+        Duration d2 = Duration.between(LocalTime.MAX,LocalTime.MIN);  //LocalTime.MAX =  '23:59:59.999999999' ,  LocalTime.MIN = '00:00'
+                                                                                                                  
+        System.out.println(d2.isNegative());
+    }
+}
+Output :
+false
+true
+
+isZero() : 
+import java.time.*;
+public class CWH extends Thread{
+    public static void main(String[] args) {
+        Duration d1 = Duration.between(LocalTime.MIN,LocalTime.MIDNIGHT);  //LocalTime.MIN = '00:00' , LocalTime.NOON = '00:00'
+        System.out.println(d1.isZero());
+
+        Duration d2 = Duration.between(LocalTime.MAX,LocalTime.MIN);  //LocalTime.MAX =  '23:59:59.999999999' ,  LocalTime.MIN = '00:00'
+
+        System.out.println(d2.isZero());
+    }
+}
+Output :
+true
+false
+
+
+
+#LocalDate class :
+import java.time.*;
+public class CWH extends Thread{
+            public static void main(String[] args) {
+                LocalDate d = LocalDate.now();
+                System.out.println(d);
+            }
+}
+        
+Output :
+2021-05-26
+
+#LocalTime class :
+import java.time.*;
+public class CWH extends Thread{
+            public static void main(String[] args) {
+                LocalTime t = LocalTime.now();
+                System.out.println(t);
+
+            }
+}
+Output :
+13:13:36.198479100
