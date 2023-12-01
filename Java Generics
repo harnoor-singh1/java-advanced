@@ -1,0 +1,107 @@
+#Bugs can be detected at compile-time:
+import java.util.ArrayList;
+
+public class CWH {
+    public static void main(String[] args) {
+//        Without Java Generics :
+
+        ArrayList myArrayList = new ArrayList();
+        myArrayList.add(10);  //Integer value
+        myArrayList.add("Harry Bhai!"); //String value
+        myArrayList.add(20.4); //Double value
+        System.out.println(myArrayList);
+
+    }
+}
+Output :
+[10, Harry Bhai!, 20.4]
+
+##In the above code, notice that we can store any type of object in a collection without Generics. But, this is not the case with the Generics. It allows us to store only one type of object. Take a look at the example given below :
+
+import java.util.ArrayList;
+
+public class CWH {
+    public static void main(String[] args) {
+//        With Java Generics :
+
+        ArrayList<Integer> myArrayList = new ArrayList();
+        myArrayList.add(10);  //Integer value
+        myArrayList.add("Harry Bhai!"); //String value
+        myArrayList.add(20.4); //Double value
+        System.out.println(myArrayList);
+
+    }
+}
+Output :
+
+java: incompatible types: java.lang.String cannot be converted to java.lang.Integer
+java: incompatible types: double cannot be converted to java.lang.Integer
+
+
+
+
+
+#Type-casting not required :
+import java.util.ArrayList;
+
+public class CWH {
+    public static void main(String[] args) {
+//        Without Java Generics :
+
+        ArrayList myArrayList = new ArrayList();
+        myArrayList.add(10);  //Integer value
+        myArrayList.add("Harry Bhai!"); //String value
+        myArrayList.add(20.4); //Double value
+
+        int x = myArrayList.get(0);
+        System.out.println(x);
+
+    }
+}
+Output :
+java: incompatible types: java.lang.Object cannot be converted to int
+
+The above code produces an error because we've not typecasted the object into the integer type. Now, let's typecast and see the results :
+
+import java.util.ArrayList;
+
+public class CWH {
+    public static void main(String[] args) {
+//        Without Java Generics :
+
+        ArrayList myArrayList = new ArrayList();
+        myArrayList.add(10);  //Integer value
+        myArrayList.add("Harry Bhai!"); //String value
+        myArrayList.add(20.4); //Double value
+
+        int x = (int) myArrayList.get(0); //b=object typecasted into integer
+        System.out.println(x);
+
+    }
+
+}
+Output:
+10
+
+Now, let's see how we can get the desired results with the help of the Generics :
+
+import java.util.ArrayList;
+
+public class CWH {
+    public static void main(String[] args) {
+//        With Java Generics :
+
+        ArrayList<Integer> myArrayList = new ArrayList();
+        myArrayList.add(10);
+        myArrayList.add(20);
+        myArrayList.add(30);
+        myArrayList.add(40);
+
+        int x = myArrayList.get(0);
+        System.out.println(x);
+
+    }
+}
+
+Output:
+10
